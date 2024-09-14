@@ -43,7 +43,7 @@ fun Directiongame() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(16.dp),
+                .padding(20.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -86,5 +86,12 @@ fun Directiongame() {
             Text(text = "You are facing ${direction.value}")
             Text(text = "You found ${treasuresFound.value} treasures")
         }
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun DirectionGamePreview() {
+    DirectionGameTheme {
+        Directiongame()
     }
 }
