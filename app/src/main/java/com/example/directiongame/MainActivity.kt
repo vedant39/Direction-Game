@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
 fun Directiongame() {
     val treasuresFound = remember { mutableStateOf(0) }
     val direction = remember { mutableStateOf("North") }
+    val stormOrTreasure = remember { mutableStateOf("") }
 
     Scaffold { paddingValues ->
         Column(
@@ -51,6 +52,9 @@ fun Directiongame() {
                 direction.value = "East"
                 if (Random.nextBoolean()) {
                     treasuresFound.value++
+                    stormOrTreasure.value = "WE FOUND A TREASURE!!!!"
+                } else {
+                    stormOrTreasure.value = "STORM AHEADDD !!!!!!"
                 }
             }) {
                 Text("East")
@@ -60,6 +64,9 @@ fun Directiongame() {
                 direction.value = "West"
                 if (Random.nextBoolean()) {
                     treasuresFound.value++
+                    stormOrTreasure.value = "WE FOUND A TREASURE!!!!"
+                } else {
+                    stormOrTreasure.value = "STORM AHEADDD !!!!!!"
                 }
             }) {
                 Text("West")
@@ -69,6 +76,9 @@ fun Directiongame() {
                 direction.value = "South"
                 if (Random.nextBoolean()) {
                     treasuresFound.value++
+                    stormOrTreasure.value = "WE FOUND A TREASURE!!!!"
+                }else{
+                    stormOrTreasure.value = "STORM AHEADDD !!!!!!"
                 }
             }) {
                 Text("South")
@@ -78,6 +88,9 @@ fun Directiongame() {
                 direction.value = "North "
                 if (Random.nextBoolean()) {
                     treasuresFound.value++
+                    stormOrTreasure.value = "WE FOUND A TREASURE!!!!"
+                } else {
+                    stormOrTreasure.value = "STORM AHEADDD !!!!!!"
                 }
             }) {
                 Text("North")
@@ -85,6 +98,7 @@ fun Directiongame() {
 
             Text(text = "You are facing ${direction.value}")
             Text(text = "You found ${treasuresFound.value} treasures")
+            Text(text = " ${stormOrTreasure.value} ")
         }
     }
 }
